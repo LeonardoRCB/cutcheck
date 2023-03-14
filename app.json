@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "cutcheck",
+    "slug": "cutcheck",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
