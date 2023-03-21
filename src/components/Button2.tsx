@@ -4,7 +4,7 @@ type Props = IButtonProps & {
   title: string;
 }
 
-export function Button({ title, ...rest }: Props) {
+export function Button2({ title, ...rest }: Props) {
   return (
     <ButtonNativeBase
       bg="green.700"
@@ -14,7 +14,7 @@ export function Button({ title, ...rest }: Props) {
       _pressed={{ bg: "green.500" }}
       {...rest}
     >
-      <Heading color ='white' fontSize="sm">
+      <Heading color ='green.700' fontSize="sm">
         {title}
       </Heading>
     </ButtonNativeBase>

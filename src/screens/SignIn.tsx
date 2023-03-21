@@ -1,15 +1,27 @@
-import { VStack, Heading, Icon, useTheme, KeyboardAvoidingView, Center } from 'native-base';
+import { VStack, Heading, Icon, useTheme} from 'native-base';
 import { Envelope, Key } from 'phosphor-react-native';
-import { Platform } from 'react-native';
+
+import { signIn } from '../services/auth';
 
 import Logo from '../assets/new_logo2.svg';
 
 import { Input } from '../components/Input';
 import { Button } from '../components/Button';
+import { Button2 } from '../components/Button2';
 
- export function SignIn(){
+ export function SignIn(navigate){
+
 
   const  { colors } = useTheme();
+
+  async function handleSignIn() {
+   const response = await signIn();
+   console.log(response);
+  }
+
+  function handleSignUp() {
+    navigate.navigation.navigate('tipodeusuario');
+  }
 
   return ( 
         <VStack flex={1} bg="gray.600" alignItems='center' px={8} pt={24}>
@@ -33,13 +45,15 @@ import { Button } from '../components/Button';
               w='full'
               title='Entrar'
               mb={2} 
+              onPress={handleSignIn}
             />
-            <Button
+            <Button2
               w='full'
               title='Cadastre-se'
               bg='transparent'
               borderWidth={2}
               borderColor='green.700'
+              onPress={handleSignUp}
             />
             <Button
               mt={15} 

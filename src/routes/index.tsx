@@ -1,35 +1,42 @@
 import { useState, useEffect } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-//
+import { NavigationContainer } from '@react-navigation/native';//
 
-import { SignIn } from '../screens/SignIn';
+import { AuthRoutes } from '../routes/auth.routes';
 import { AppRoutes } from './app.routes';
-import { Loading } from '../components/Loading';
 
 export function Routes() {
-  //anota se esta carregando
-  const [loading, setIsLoading] = useState(true);
-  //anota se o usuario esta autenticado
-  const [user, setUser] = useState();
-  
-  useEffect(() => {
+
+     //anota se esta carregando
+    //const [loading, setIsLoading] = useState(true);
+    //anota se o usuario esta autenticado
+    //const [user, setUser] = useState();
+
+    
+ // useEffect(() => {
     //const subscriber = auth()
      // .onAuthStateChanged(response => {
      //   setUser(response);
       //  setIsLoading(false);
-      });
+     // });
     
      //return subscriber;
  //}, []);
 
- if (loading) {
-   return <Loading />
-  }
+// if (loading) {
+  // return <Loading />
+ // }
+
+  //return (
+   // <NavigationContainer>
+    //  {/* se usuario existe exibe as rotas autenticadas , se nao matem user na tela de login*/}
+     // {user ? <AppRoutes /> : <SignIn/>}
+  //  </NavigationContainer>
+ // )
+//}
 
   return (
     <NavigationContainer>
-      {/* se usuario existe exibe as rotas autenticadas , se nao matem user na tela de login*/}
-      {user ? <AppRoutes /> : <SignIn/>}
+      {<AuthRoutes/>}
     </NavigationContainer>
   )
 }
