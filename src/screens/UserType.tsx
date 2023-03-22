@@ -1,5 +1,5 @@
 import React ,{ useState } from 'react';
-import { VStack, Heading, Icon, useTheme } from 'native-base';
+import { VStack,Box} from 'native-base';
 import { Envelope, Key } from 'phosphor-react-native';
 
 import { Button } from '../components/Button';
@@ -14,10 +14,11 @@ export function UserType(navigate) {
     }
 
   return (
-    <VStack flex={1} bg="gray.600" alignItems='center' justifyContent='center' px={8} pt={24}>
-        <Header
-            title='Selecione seu perfil'
-        />
+    <VStack flex={1} bg="gray.700">
+      <Box bg="gray.600" px={6}>
+        <Header title="Voce é?" />
+      </Box>
+      <VStack flex={1} px={4} bg='gray.600' justifyContent='center' pb={50}>
         <Button
           w='full'
           title='Cliente'
@@ -36,6 +37,7 @@ export function UserType(navigate) {
           mb={2} 
           onPress={()=>handleUserType('barbeiro')}  
         />
+      </VStack>
     </VStack>
   );
 }
